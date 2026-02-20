@@ -1,0 +1,17 @@
+{
+  "short_name": "DevFinance",
+  "name": "DevFinance Pro - Gestão Financeira",
+  "icons": [
+    {
+      "src": "https://cdn-icons-png.flaticon.com/512/2910/2910311.png",
+      "type": "image/png",
+      "sizes": "512x512"
+    }
+  ],
+  "start_url": "/index.html",
+  "background_color": "#f0f2f5",
+  "display": "standalone",
+  "scope": "/",
+  "theme_color": "#363f5f",
+  "description": "Dashboard financeiro moderno com modo escuro e gestão de metas."
+}
