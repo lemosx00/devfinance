@@ -119,8 +119,14 @@ App.update();
 // Função para esconder o loader com um pequeno delay para suavidade
 window.addEventListener('load', () => {
     const loader = document.getElementById('loader-overlay');
+if ('serviceWorker' in navigator) {
+    navigator.serviceWorker.register('./sw.js')
+    .then(() => console.log('Service Worker Ativo!'))
+    .catch(err => console.log('Erro no SW:', err));
+}
     
     setTimeout(() => {
         loader.classList.add('loader-hidden');
     }, 800); // 800ms é o tempo ideal para o usuário perceber o capricho visual
+
 });
