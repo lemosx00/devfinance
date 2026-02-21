@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DevFinance Pro | Gestão Inteligente</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+    <div id="loader-overlay">
+    <div class="loader"></div>
+    <p>Preparando suas finanças...</p>
+    </div>
+    <header>
+        <div class="header-content">
+            <div class="user-greeting">
+                <p id="greetingText">Carregando...</p>
+                <h1>DevFinance<span>Pro</span></h1>
+            </div>
+            <button id="theme-switch" onclick="toggleTheme()">🌓 Tema</button>
+        </div>
+    </header>
+
+    <main class="container">
+        <section id="balance">
+            <div class="card"><h3>Entradas</h3><p id="incomeDisplay">R$ 0,00</p></div>
+            <div class="card"><h3>Saídas</h3><p id="expenseDisplay">R$ 0,00</p></div>
+            <div id="totalCard" class="card total"><h3>Saldo Total</h3><p id="totalDisplay">R$ 0,00</p></div>
+        </section>
+
+        <section class="grid-analytics">
+            <div class="card goal-card">
+                <div class="header-goal">
+                    <h3 id="goalTitleDisplay">Meta</h3>
+                    <button onclick="toggleGoalModal()" class="btn-edit-goal">⚙️ Configurar</button>
+                </div>
+                <div class="progress-bar"><div id="progressFill" style="width: 0%"></div></div>
+                <p id="goalText">Progresso: 0%</p>
+            </div>
+            <div class="card chart-container"><canvas id="financeChart"></canvas></div>
+        </section>
+
+        <section id="transaction">
+            <div class="header-actions">
+                <div class="main-actions">
+                    <button class="btn-new" onclick="toggleModal()">+ Transação</button>
+                    <div class="extra-actions">
+                        <button class="btn-util" onclick="exportBackup()" title="Backup">💾</button>
+                        <button class="btn-util" onclick="importBackup()" title="Restaurar">📂</button>
+                    </div>
+                </div>
+                <div class="filter-group">
+                    <button class="btn-filter active" onclick="filterTransactions('all', this)">Todas</button>
+                    <button class="btn-filter" onclick="filterTransactions('income', this)">Entradas</button>
+                    <button class="btn-filter" onclick="filterTransactions('expense', this)">Saídas</button>
+                </div>
+            </div>
+            <table id="data-table">
+                <thead><tr><th>Descrição</th><th>Valor</th><th>Categoria</th><th>Tipo</th><th></th></tr></thead>
+                <tbody id="transaction-body"></tbody>
+            </table>
+        </section>
+    </main>
+
+    <div class="modal-overlay" id="modal">
+        <div class="modal">
+            <form onsubmit="handleFormSubmit(event)">
+                <h2>Nova Transação</h2>
+                <input type="text" id="description" placeholder="Descrição" required>
+                <input type="number" step="0.01" id="amount" placeholder="0,00" required>
+                <div class="category-group">
+                    <select id="categorySelect"></select>
+                    <button type="button" onclick="addNewCategory()" class="btn-add-cat">+</button>
+                </div>
+                <select id="type">
+                    <option value="income">Entrada</option>
+                    <option value="expense" selected>Saída</option>
+                </select>
+                <div class="actions">
+                    <button type="button" onclick="toggleModal()" class="btn-cancel">Cancelar</button>
+                    <button type="submit" class="btn-save">Salvar</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <div class="modal-overlay" id="goal-modal">
+        <div class="modal">
+            <form onsubmit="handleGoalUpdate(event)">
+                <h2>Configurar Meta</h2>
+                <input type="text" id="newGoalTitle" placeholder="Título da Meta" required>
+                <input type="number" id="newGoalValue" placeholder="Valor Alvo" required>
+                <label for="newGoalDate">Data Final:</label>
+                <input type="date" id="newGoalDate" required>
+                <div class="actions">
+                    <button type="button" onclick="toggleGoalModal()" class="btn-cancel">Cancelar</button>
+                    <button type="submit" class="btn-save">Salvar Meta</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
