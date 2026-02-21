@@ -24,9 +24,9 @@ O **DevFinance Pro** é uma aplicação completa de controle de finanças pessoa
 
 ## 📋 Como Testar o Projeto
 
-1.  Clone este repositório ou baixe os arquivos.
-2.  Abra o arquivo `index.html` em qualquer navegador moderno.
-3.  **Dica Técnica:** Como o projeto utiliza `localStorage`, seus dados ficarão salvos apenas no navegador onde você os inseriu, a menos que utilize a função de **Backup**.
+1.  Clone este repositório ou baixe os arquivos.
+2.  Abra o arquivo `index.html` em qualquer navegador moderno.
+3.  **Dica Técnica:** Como o projeto utiliza `localStorage`, seus dados ficarão salvos apenas no navegador onde você os inseriu, a menos que utilize a função de **Backup**.
 
 
 
@@ -41,8 +41,9 @@ O **DevFinance Pro** é uma aplicação completa de controle de finanças pessoa
 
 ## 👨‍💻 Autor
 
-**Seu Nome** 🚀 Desenvolvedor em constante aprendizado.
+**Guilherme Lemos** 🚀 Desenvolvedor em constante aprendizado.
 
-📧 **Email:** seuemail@exemplo.com  
-📱 **WhatsApp:** +55 91 98744-6257  
+📧 **Email:** guilemos324@gmail.com  
+📱 **WhatsApp:** +55 91 98744-6257  
+
 🔗 **LinkedIn:** [linkedin.com/in/seu-perfil](https://linkedin.com/in/seu-perfil)
